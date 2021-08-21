@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class AdminPostController extends Controller
 {
@@ -23,9 +23,11 @@ class AdminPostController extends Controller
         return view('admin.posts.create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         Post::create($request->all());
+
+        session()->flash('status', 'store');
 
         return redirect()->route('admin.posts.index');
     }
@@ -39,7 +41,7 @@ class AdminPostController extends Controller
         return view('admin.posts.edit', $data);
     }
 
-    public function update(Post $post, Request $request)
+    public function update(Post $post, PostRequest $request)
     {
         $post->update($request->all());
 
@@ -49,6 +51,8 @@ class AdminPostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
+
+        session()->flash('status', 'destroy');
 
         return redirect()->route('admin.posts.index');
     }
