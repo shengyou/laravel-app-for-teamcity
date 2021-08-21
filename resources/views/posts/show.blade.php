@@ -22,7 +22,7 @@
                     </header>
                     <!-- Preview image figure-->
                     <figure class="mb-4">
-                        <img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..."/>
+                        <img class="img-fluid rounded" src="/storage/{{ $post->id }}.jpg" alt="..."/>
                     </figure>
                     <!-- Post content-->
                     <section class="mb-5">

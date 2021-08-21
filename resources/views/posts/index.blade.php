@@ -22,7 +22,7 @@
                 <!-- Featured blog post-->
                 <div class="card mb-4">
                     <a href="{{ route('posts.show', $featuredPost->id) }}">
-                        <img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..."/>
+                        <img class="card-img-top" src="/storage/{{ $featuredPost->id }}.jpg" alt="..."/>
                     </a>
                     <div class="card-body">
                         <div class="small text-muted">{{ $featuredPost->created_at->diffForHumans() }}</div>

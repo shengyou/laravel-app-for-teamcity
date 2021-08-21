@@ -25,7 +25,10 @@ class AdminPostController extends Controller
 
     public function store(PostRequest $request)
     {
-        Post::create($request->all());
+        $post = Post::create($request->only(['title', 'content']));
+        $file = $request->file('cover');
+
+        $file->storeAs('public', $post->id . '.' . $file->extension());
 
         session()->flash('status', 'store');
 

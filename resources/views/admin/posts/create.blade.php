@@ -24,7 +24,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
-                    <form action="{{ route('admin.posts.store') }}" method="POST">
+                    <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
                         @method('POST')
                         @csrf
                         <div class="mb-3">
@@ -34,6 +34,10 @@
                         <div class="mb-3">
                             <label for="content" class="form-label">文章內容</label>
                             <textarea id="content" name="content" class="form-control" rows="10" placeholder="請輸入文章內容">{{ old('content') }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cover" class="form-label">封面圖</label>
+                            <input id="cover" name="cover" class="form-control" type="file">
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button class="btn btn-primary btn-sm" type="submit">儲存</button>
