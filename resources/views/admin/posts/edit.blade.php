@@ -23,11 +23,11 @@
                     <form>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">文章標題</label>
-                            <input type="text" class="form-control" placeholder="請輸入文章標題">
+                            <input type="text" class="form-control" placeholder="請輸入文章標題" value="{{ $post->title }}">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">文章內容</label>
-                            <textarea class="form-control" rows="10" placeholder="請輸入文章內容"></textarea>
+                            <textarea class="form-control" rows="10" placeholder="請輸入文章內容">{{ $post->content }}</textarea>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <a class="btn btn-primary btn-sm" href="#">儲存</a>

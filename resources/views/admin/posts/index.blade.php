@@ -29,12 +29,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach(range(1, 10) as $id)
+                        @foreach($posts as $post)
                         <tr>
-                            <th scope="row" style="width: 50px">{{ $id }}</th>
-                            <td>{{ '標題' . $id }}</td>
+                            <th scope="row" style="width: 50px">{{ $post->id }}</th>
+                            <td>{{ $post->title }}</td>
                             <td style="width: 150px">
-                                <button type="button" class="btn btn-primary btn-sm">編輯</button>
+                                <a class="btn btn-primary btn-sm" href="{{ route("admin.posts.edit", $post->id) }}">編輯</a>
                                 <button type="button" class="btn btn-danger btn-sm">刪除</button>
                             </td>
                         </tr>
